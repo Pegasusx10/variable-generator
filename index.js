@@ -1,4 +1,25 @@
-// Kebab case
+
+
+// on click submit
+const storedItem = localStorage.getItem("storedItem");
+
+function save(){
+
+    const Item = document.getElementById("input").ariaValueMax;
+    localStorage.setItem("storedItem", Item);
+    document.getElementById("savedText").innerHTML = Item;
+
+}
+function get(){
+    localStorage.getItem("storedItem");
+    document.getElementById("openedText").innerHTML = storedItem;
+}
+
+
+
+
+
+// Kebab case generator
 const kebabCase = string => string
 .replace(/([a-z])([A-Z])/g, "$1-$2")
 .replace(/[\s_]+/g, '-')
@@ -9,7 +30,7 @@ console.log(kebabCase('Shinzo abe'));
 console.log(kebabCase('Adolf dassler Hitler'));
 
 
-// Snake case
+// Snake case generator
 function snake_case_string(str) {
     return str && str.match(
 /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
@@ -22,7 +43,7 @@ console.log(snake_case_string('Shinzo abe'));
 console.log(snake_case_string('Adolf dassler Hitler'));
 
 
-// camel case
+// camel case generator
 camelize = function camelize(str) {
     return str.replace(/\W+(.)/g, function(match, chr)
      {
@@ -30,6 +51,6 @@ camelize = function camelize(str) {
       });
   }
 
-console.log(camelize("JavaScript Exercises"));
-console.log(camelize("JavaScript exercises"));
-console.log(camelize("JavaScriptExercises"));
+console.log(camelize("xi jing ping"));
+console.log(camelize("Shinzo abe"));
+console.log(camelize("Adolf dassler Hitler"));
