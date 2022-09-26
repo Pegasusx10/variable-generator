@@ -10,16 +10,15 @@
 </head>
 <h1>Customise your variable names</h1>
 <body>
-    <form> <label><b>Enter a Message</b></label>
-        <input type="text" name="message" id="user_input">
-        <input type="submit" onclick="showInput();">
+    <form> <input type="text" id="name" name="name">
+        <button>Generate</button>
+        <div id="submitbtn"></div>
     </form> 
     <br>    
-    <button id = "kebab">kebab</button>
-    <button id = "Camel">Camel</button>
-    <button id = "Snake">Snake</button>
-    <br><br>
-    <label>Your input: </label>
-    <p><span id='display'></span></p>
+        
+      </div>
+      <button onclick="getElementById('kebab').innerHTML=kebab()">Kebab</button>
+      <button onclick="getElementById('snake').innerHTML=snake()">snake</button>
+      <button onclick="getElementById('camel').innerHTML=camel()">camel</button>
 </body>
 </html>
