@@ -1,23 +1,7 @@
-
-
-// on click submit
-const storedItem = localStorage.getItem("storedItem");
-
-function save(){
-
-    const Item = document.getElementById("input").ariaValueMax;
-    localStorage.setItem("storedItem", Item);
-    document.getElementById("savedText").innerHTML = Item;
-
+function showInput() {
+    document.getElementById('display').innerHTML = 
+    document.getElementById("user_input").value;
 }
-function get(){
-    localStorage.getItem("storedItem");
-    document.getElementById("openedText").innerHTML = storedItem;
-}
-
-
-
-
 
 // Kebab case generator
 const kebabCase = string => string
@@ -54,3 +38,4 @@ camelize = function camelize(str) {
 console.log(camelize("xi jing ping"));
 console.log(camelize("Shinzo abe"));
 console.log(camelize("Adolf dassler Hitler"));
+
