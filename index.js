@@ -1,12 +1,9 @@
 // Kebab case
-const kebabCase = string => string
-.replace(/([a-z])([A-Z])/g, "$1-$2")
-.replace(/[\s_]+/g, '-')
-.toLowerCase();
+var sentence = "Electric cars are quick but not fast";
 
-console.log(kebabCase('xi jing ping'));
-console.log(kebabCase('Shinzo abe'));
-console.log(kebabCase('Adolf dassler Hitler'));
+var words = sentence.split("A-Z")
+var x = sentence.split(" ").join("-");
+console.log(x);
 
 
 // Snake case
