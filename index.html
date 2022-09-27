@@ -11,14 +11,17 @@
 <h1>Customise your variable names</h1>
 <body>
     <form> <input type="text" id="name" name="name">
-        <button>Generate</button>
-        <div id="submitbtn"></div>
-    </form> 
+        <input type="button" value="Submit" onClick="pr()">
+    
     <br>    
-        
-      </div>
-      <button onclick="getElementById('kebab').innerHTML=kebab()">Kebab</button>
-      <button onclick="getElementById('snake').innerHTML=snake()">snake</button>
-      <button onclick="getElementById('camel').innerHTML=camel()">camel</button>
+    </form>
+</div>
+    
+<button onclick="kebabcase()">Kebab</button>
+<button onclick="snakecase()">snake</button>
+<button onclick="camelcase()">camel</button>
+  <div class="preview" id="preview"></div>
+<br></br>
+Results: <ul id="result"></ul>
 </body>
 </html>
