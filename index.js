@@ -2,7 +2,9 @@
 let option = 'submit';
 let text;
 function submitbutton() {
-    switch(option){
+  if(document.getElementById("name").value=="")
+    return;
+  switch(option){
       case 'Kebab':
       case 'Snake':
       case 'Camel':
@@ -19,7 +21,12 @@ function submitbutton() {
 function kebabcase() {
   option = 'Kebab';
 let sentence = document.getElementById('name').value;
-text = sentence.split(" ").join("-");
+sentence=sentence.trim();
+text = sentence.split(" ");
+removeWhitespace(text)
+console.log(text);
+text= text.join("-")
+console.log(text);
 document.getElementById("preview").innerHTML = text;
 }
 
@@ -29,13 +36,14 @@ function snakecase() {
 let sentence = document.getElementById('name').value;
 text = sentence.split(" ").join("_");
 document.getElementById("preview").innerHTML = text;
+removeWhitespace(text)
 }
 
 // camel case generator
 function camelcase() {
   option='Camel';
   let sentence = document.getElementById('name').value;
-  let text = sentence.split(" ");
+  text = sentence.split(" ");
   let camel=text['0'].toLocaleLowerCase();
   for (let index = 1; index < text.length; index++) {
       let temp=text[index];
@@ -46,4 +54,10 @@ function camelcase() {
       camel=camel+temp2;
   }
   document.getElementById("preview").innerHTML = camel;
+  text=camel;
+}
+
+//remove space from array
+function removeWhitespace(array) {
+  return array.filter((item) => item!=' ')
 }
