@@ -1,44 +1,44 @@
-//  Print the
-var option='f';
-var x;
-function pr() {
+//  Print the input string
+var option = 'submit';
+var text;
+function submitbutton() {
     switch(option){
-      case 'k':
-      case 's':
-      case 'c':
-        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML+"<li>"+x+"</li>"; 
+      case 'Kebab':
+      case 'Snake':
+      case 'Camel':
+        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + "<li>" + text + "</li>"; 
         break;
       default:
-        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML+"<li>"+document.getElementById('name').value+"</li>"; 
+        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + "<li>" + document.getElementById('name').value + "</li>"; 
     
       }
-      option='f';
+      option ='submit';
   }
 
 // Kebab case generator
 function kebabcase() {
-  option='k';
+  option = 'Kebab';
 var sentence = document.getElementById('name').value;
-x = sentence.split(" ").join("-");
-document.getElementById("preview").innerHTML = x;
+text = sentence.split(" ").join("-");
+document.getElementById("preview").innerHTML = text;
 }
 
 // Snake case generator
 function snakecase() {
-  option='s';
+  option='Snake';
 var sentence = document.getElementById('name').value;
-x = sentence.split(" ").join("_");
-document.getElementById("preview").innerHTML = x;
+text = sentence.split(" ").join("_");
+document.getElementById("preview").innerHTML = text;
 }
 
 // camel case generator
 function camelcase() {
-  option='c';
+  option='Camel';
   var sentence = document.getElementById('name').value;
-  var x = sentence.split(" ");
-  var camel=x['0'].toLocaleLowerCase();
-  for (let index = 1; index < x.length; index++) {
-      var temp=x[index];
+  var text = sentence.split(" ");
+  var camel=text['0'].toLocaleLowerCase();
+  for (let index = 1; index < text.length; index++) {
+      var temp=text[index];
       temp=temp.toLocaleLowerCase();
       var temp2=temp.charAt(0);
       temp2=temp2.toUpperCase();
