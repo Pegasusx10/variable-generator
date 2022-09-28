@@ -1,41 +1,49 @@
-function showInput() {
-    document.getElementById('display').innerHTML = 
-    document.getElementById("user_input").value;
-}
-
-// Kebab case generator
-const kebabCase = string => string
-.replace(/([a-z])([A-Z])/g, "$1-$2")
-.replace(/[\s_]+/g, '-')
-.toLowerCase();
-
-console.log(kebabCase('xi jing ping'));
-console.log(kebabCase('Shinzo abe'));
-console.log(kebabCase('Adolf dassler Hitler'));
-
-
-// Snake case generator
-function snake_case_string(str) {
-    return str && str.match(
-/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-        .map(s => s.toLowerCase())
-        .join('_');
-}
-
-console.log(snake_case_string('xi jing ping'));
-console.log(snake_case_string('Shinzo abe'));
-console.log(snake_case_string('Adolf dassler Hitler'));
-
-
-// camel case generator
-camelize = function camelize(str) {
-    return str.replace(/\W+(.)/g, function(match, chr)
-     {
-          return chr.toUpperCase();
-      });
+//  Print the
+var option='f';
+var x;
+function pr() {
+    switch(option){
+      case 'k':
+      case 's':
+      case 'c':
+        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML+"<li>"+x+"</li>"; 
+        break;
+      default:
+        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML+"<li>"+document.getElementById('name').value+"</li>"; 
+    
+      }
+      option='f';
   }
 
-console.log(camelize("xi jing ping"));
-console.log(camelize("Shinzo abe"));
-console.log(camelize("Adolf dassler Hitler"));
+// Kebab case generator
+function kebabcase() {
+  option='k';
+var sentence = document.getElementById('name').value;
+x = sentence.split(" ").join("-");
+document.getElementById("preview").innerHTML = x;
+}
 
+// Snake case generator
+function snakecase() {
+  option='s';
+var sentence = document.getElementById('name').value;
+x = sentence.split(" ").join("_");
+document.getElementById("preview").innerHTML = x;
+}
+
+// camel case generator
+function camelcase() {
+  option='c';
+  var sentence = document.getElementById('name').value;
+  var x = sentence.split(" ");
+  var camel=x['0'].toLocaleLowerCase();
+  for (let index = 1; index < x.length; index++) {
+      var temp=x[index];
+      temp=temp.toLocaleLowerCase();
+      var temp2=temp.charAt(0);
+      temp2=temp2.toUpperCase();
+      temp2=temp2+temp.slice(1);
+      camel=camel+temp2;
+  }
+  document.getElementById("preview").innerHTML = camel;
+}
